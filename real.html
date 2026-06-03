@@ -205,11 +205,14 @@
       box-shadow: 0 0 12px rgba(24,231,255,.25);
     }
 
-    .group-91 { border-color: rgba(24,231,255,.28); }
-    .group-51 { border-color: rgba(255,209,102,.30); background: linear-gradient(90deg, rgba(255,209,102,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
+    .group-91 { border-color: rgba(24,231,255,.34); }
+    .group-91::after { content: '热门'; }
+    .group-51 { border-color: rgba(255,209,102,.38); background: linear-gradient(90deg, rgba(255,209,102,.20), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-51::before { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
-    .group-hg { border-color: rgba(86,243,166,.30); background: linear-gradient(90deg, rgba(86,243,166,.17), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
+    .group-51::after { content: '推荐'; }
+    .group-hg { border-color: rgba(86,243,166,.38); background: linear-gradient(90deg, rgba(86,243,166,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-hg::before { background: var(--green); box-shadow: 0 0 14px var(--green); }
+    .group-hg::after { content: '信用'; }
 
     .link-btn {
       position: relative;
@@ -289,6 +292,25 @@
       text-overflow: ellipsis;
     }
 
+    .link-subtitle.code-subtitle {
+      color: #ffd166;
+      text-shadow: 0 0 10px rgba(255, 209, 102, .22);
+    }
+
+    .link-btn.contact-card {
+      border-color: rgba(24, 231, 255, .30);
+      background:
+        linear-gradient(145deg, rgba(24,231,255,.13), rgba(255,255,255,.045)),
+        radial-gradient(circle at 20% 0%, rgba(24,231,255,.18), transparent 55%);
+    }
+
+    .link-btn.nav-card {
+      border-color: rgba(139, 92, 255, .32);
+      background:
+        linear-gradient(145deg, rgba(139,92,255,.14), rgba(255,255,255,.045)),
+        radial-gradient(circle at 20% 0%, rgba(139,92,255,.18), transparent 55%);
+    }
+
     .footer-tip {
       margin-top: 8px;
       padding-bottom: 1px;
@@ -339,7 +361,7 @@
       </div>
     </section>
 
-    <div class="notice">官方导航 · 安全入口 · 线路打不开请更换备用入口</div>
+    <div class="notice">官方导航 · 安全入口 · 多线路备用</div>
 
     <div class="links">
       <div class="group-header group-51"><span>51系彩娱乐线路-世界杯专属</span></div>
@@ -348,7 +370,7 @@
         <div class="link-thumb" style="background-image:url('./images/thumb3.png')"></div>
         <div class="link-text">
           <div class="link-title">线路（1）</div>
-          <div class="link-subtitle">注册码：95355</div>
+          <div class="link-subtitle code-subtitle">注册码：95355</div>
         </div>
       </a>
 
@@ -356,11 +378,11 @@
         <div class="link-thumb" style="background-image:url('./images/thumb4.png')"></div>
         <div class="link-text">
           <div class="link-title">线路（2）</div>
-          <div class="link-subtitle">注册码：95355</div>
+          <div class="link-subtitle code-subtitle">注册码：95355</div>
         </div>
       </a>
 
-      <a href="https://kf955.vip" target="_blank" class="link-btn">
+      <a href="https://kf955.vip" target="_blank" class="link-btn contact-card">
         <div class="link-thumb" style="background-image:url('./images/thumb5.png')"></div>
         <div class="link-text">
           <div class="link-title">联系客服</div>
@@ -368,7 +390,7 @@
         </div>
       </a>
 
-      <a href="https://yy.955951.com" target="_blank" class="link-btn">
+      <a href="https://yy.955951.com" target="_blank" class="link-btn nav-card">
         <div class="link-thumb" style="background-image:url('./images/thumb6.png')"></div>
         <div class="link-text">
           <div class="link-title">网站导航</div>
@@ -382,7 +404,7 @@
         <div class="link-thumb" style="background-image:url('./images/998.png')"></div>
         <div class="link-text">
           <div class="link-title">线路（1）</div>
-          <div class="link-subtitle">注册码：2789678</div>
+          <div class="link-subtitle code-subtitle">注册码：2789678</div>
         </div>
       </a>
 
@@ -390,11 +412,11 @@
         <div class="link-thumb" style="background-image:url('./images/998.png')"></div>
         <div class="link-text">
           <div class="link-title">线路（2）</div>
-          <div class="link-subtitle">注册码：2789678</div>
+          <div class="link-subtitle code-subtitle">注册码：2789678</div>
         </div>
       </a>
 
-      <a href="https://9191kf.com" target="_blank" class="link-btn">
+      <a href="https://9191kf.com" target="_blank" class="link-btn contact-card">
         <div class="link-thumb" style="background-image:url('./images/998.png')"></div>
         <div class="link-text">
           <div class="link-title">联系客服</div>
@@ -402,7 +424,7 @@
         </div>
       </a>
 
-      <a href="https://9191.vip" target="_blank" class="link-btn">
+      <a href="https://9191.vip" target="_blank" class="link-btn nav-card">
         <div class="link-thumb" style="background-image:url('./images/998.png')"></div>
         <div class="link-text">
           <div class="link-title">网站导航</div>
