@@ -147,15 +147,33 @@
     .notice {
       position: relative;
       margin-bottom: 8px;
-      padding: 6px 9px;
+      padding: 6px 0;
       border-radius: 12px;
       color: #d8f8ff;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .2px;
-      text-align: center;
       background: rgba(255,255,255,.060);
       border: 1px solid rgba(255,255,255,.11);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .notice-track {
+      display: inline-block;
+      min-width: max-content;
+      padding-left: 100%;
+      animation: notice-scroll 24s linear infinite;
+    }
+
+    .notice-track::before {
+      content: '📢';
+      margin-right: 8px;
+    }
+
+    @keyframes notice-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
     }
 
     .links {
@@ -316,7 +334,8 @@
       .logo-wrap img { width: 45px; height: 45px; }
       .title { font-size: 18px; }
       .subtitle { font-size: 10px; }
-      .notice { margin-bottom: 6px; padding: 5px 7px; font-size: 10px; }
+      .notice { margin-bottom: 6px; padding: 5px 0; font-size: 10px; }
+      .notice-track { animation-duration: 22s; }
       .links { gap: 6px; }
       .group-header { height: 27px; font-size: 11px; border-radius: 12px; }
       .link-btn { min-height: 56px; gap: 7px; padding: 7px; border-radius: 15px; }
@@ -339,7 +358,7 @@
       </div>
     </section>
 
-    <div class="notice">官方导航 · 安全入口 · 线路打不开请更换备用入口</div>
+    <div class="notice"><span class="notice-track">51彩娱乐和91彩娱乐均为运营10年无黑历史的信誉平台，非同一家公司。AA138导航网只提供安全可靠的博彩网，杜绝和远离任何黑历史平台。请认准官方永久网址 aa138.vip，谨防假冒网站。</span></div>
 
     <div class="links">
       <div class="group-header group-51"><span>51系彩娱乐线路-世界杯专属</span></div>
