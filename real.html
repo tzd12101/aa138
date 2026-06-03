@@ -9,180 +9,277 @@
   <style>
     * { box-sizing: border-box; }
 
+    :root {
+      --cyan: #18e7ff;
+      --blue: #3578ff;
+      --purple: #8b5cff;
+      --gold: #ffd166;
+      --green: #56f3a6;
+      --text: #f7fbff;
+      --muted: #b7c8db;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Arial, 'Microsoft YaHei', '微软雅黑', sans-serif;
-      color: #f5fbff;
+      color: var(--text);
       background:
-        radial-gradient(circle at 50% -12%, rgba(0, 224, 255, .30), transparent 34%),
-        radial-gradient(circle at 14% 18%, rgba(120, 82, 255, .22), transparent 28%),
-        radial-gradient(circle at 92% 82%, rgba(255, 196, 69, .12), transparent 30%),
-        linear-gradient(180deg, #061526 0%, #030815 55%, #02040b 100%);
+        radial-gradient(circle at 50% -20%, rgba(24, 231, 255, .34), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(139, 92, 255, .25), transparent 28%),
+        radial-gradient(circle at 8% 80%, rgba(255, 209, 102, .12), transparent 30%),
+        linear-gradient(180deg, #07182c 0%, #040917 58%, #02040a 100%);
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 8px;
+      padding: 10px;
       overflow-x: hidden;
     }
 
-    body::before {
+    body::before,
+    body::after {
       content: '';
       position: fixed;
-      inset: 0;
       pointer-events: none;
+      inset: 0;
+    }
+
+    body::before {
       background-image:
         linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 22px 22px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.72), transparent 82%);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.76), transparent 84%);
+    }
+
+    body::after {
+      background:
+        linear-gradient(115deg, transparent 0 20%, rgba(24,231,255,.07) 21%, transparent 22% 52%, rgba(139,92,255,.06) 53%, transparent 54%),
+        radial-gradient(circle at 50% 45%, transparent 0 55%, rgba(24,231,255,.08) 56%, transparent 57%);
+      opacity: .85;
     }
 
     .container {
       position: relative;
+      z-index: 1;
       width: 100%;
-      max-width: 430px;
-      min-height: calc(100vh - 16px);
-      padding: 10px 10px 9px;
-      border: 1px solid rgba(102, 226, 255, .25);
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(9, 24, 42, .82), rgba(4, 10, 22, .88));
+      max-width: 440px;
+      min-height: calc(100vh - 20px);
+      padding: 12px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(15, 34, 58, .82), rgba(4, 10, 24, .92)),
+        radial-gradient(circle at top, rgba(24,231,255,.16), transparent 55%);
+      border: 1px solid rgba(157, 237, 255, .24);
       box-shadow:
-        0 18px 45px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.10),
-        0 0 35px rgba(0, 195, 255, .10);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+        0 22px 60px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 0 38px rgba(24,231,255,.10);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
-    .brand {
-      display: grid;
-      grid-template-columns: 58px 1fr;
+    .container::before {
+      content: '';
+      position: absolute;
+      left: -20%;
+      top: -90px;
+      width: 140%;
+      height: 150px;
+      background: radial-gradient(ellipse at center, rgba(24,231,255,.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      text-align: left;
+      gap: 11px;
+      padding: 2px 2px 10px;
     }
 
-    .avatar {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
+    .logo-wrap {
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
-      border: 1px solid rgba(255,255,255,.16);
-      box-shadow: 0 0 22px rgba(0, 224, 255, .16);
+      border-radius: 21px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.045)),
+        radial-gradient(circle at 35% 25%, rgba(24,231,255,.25), transparent 50%);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 0 24px rgba(24,231,255,.18), inset 0 1px 0 rgba(255,255,255,.18);
       overflow: hidden;
     }
 
-    .avatar img {
-      width: 48px;
-      height: 48px;
+    .logo-wrap img {
+      width: 50px;
+      height: 50px;
       object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(24,231,255,.20));
     }
 
-    .title {
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: .5px;
-      color: #ffffff;
-      text-shadow: 0 0 14px rgba(0, 224, 255, .35);
-    }
+    .hero-main { min-width: 0; flex: 1; }
 
-    .bio {
-      margin-top: 5px;
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 4px 8px;
+      margin-bottom: 5px;
+      padding: 3px 7px;
       border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #9feeff;
-      background: rgba(0, 224, 255, .09);
-      border: 1px solid rgba(0, 224, 255, .20);
+      font-size: 10px;
+      font-weight: 800;
+      color: #aaf4ff;
+      background: rgba(24,231,255,.10);
+      border: 1px solid rgba(24,231,255,.18);
     }
 
-    .notice {
-      margin-bottom: 8px;
-      padding: 6px 9px;
-      border-radius: 12px;
-      color: #d8f8ff;
+    .title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: .3px;
+      color: #fff;
+      text-shadow: 0 0 18px rgba(24,231,255,.38);
+    }
+
+    .subtitle {
+      margin-top: 5px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .2px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .status-bar {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .status-chip {
+      padding: 6px 4px;
+      border-radius: 13px;
       text-align: center;
-      background: rgba(255,255,255,.055);
+      font-size: 10px;
+      font-weight: 800;
+      color: #dffaff;
+      background: rgba(255,255,255,.065);
       border: 1px solid rgba(255,255,255,.10);
     }
 
     .links {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 7px;
+      gap: 8px;
     }
 
     .group-header {
       grid-column: 1 / -1;
+      height: 30px;
       display: flex;
       align-items: center;
-      height: 25px;
-      margin: 2px 0 -1px;
-      padding: 0 9px;
-      border-radius: 10px;
+      justify-content: space-between;
+      margin: 3px 0 -1px;
+      padding: 0 10px;
+      border-radius: 14px;
       font-size: 12px;
-      font-weight: 800;
-      color: #ffffff;
+      font-weight: 900;
       letter-spacing: .2px;
-      background: linear-gradient(90deg, rgba(0, 224, 255, .22), rgba(111, 80, 255, .13), rgba(255,255,255,.03));
-      border: 1px solid rgba(0, 224, 255, .18);
-      text-shadow: 0 0 10px rgba(0, 224, 255, .35);
+      color: #fff;
+      background: linear-gradient(90deg, rgba(24,231,255,.20), rgba(139,92,255,.13), rgba(255,255,255,.04));
+      border: 1px solid rgba(24,231,255,.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
     }
 
     .group-header::before {
       content: '';
-      width: 4px;
-      height: 13px;
-      margin-right: 7px;
+      width: 6px;
+      height: 16px;
+      margin-right: 8px;
       border-radius: 99px;
-      background: #16e6ff;
-      box-shadow: 0 0 14px #16e6ff;
+      background: var(--cyan);
+      box-shadow: 0 0 14px var(--cyan);
     }
 
+    .group-header span { flex: 1; }
+
+    .group-header::after {
+      content: 'LIVE';
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 9px;
+      color: #061526;
+      background: linear-gradient(90deg, #84fbff, #ffe27a);
+      box-shadow: 0 0 12px rgba(24,231,255,.25);
+    }
+
+    .group-91 { border-color: rgba(24,231,255,.28); }
+    .group-51 { border-color: rgba(255,209,102,.30); background: linear-gradient(90deg, rgba(255,209,102,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
+    .group-51::before { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
+    .group-hg { border-color: rgba(86,243,166,.30); background: linear-gradient(90deg, rgba(86,243,166,.17), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
+    .group-hg::before { background: var(--green); box-shadow: 0 0 14px var(--green); }
+
     .link-btn {
-      min-height: 54px;
+      position: relative;
+      min-height: 62px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 8px;
-      border-radius: 14px;
+      gap: 9px;
+      padding: 8px 9px;
+      border-radius: 17px;
       text-decoration: none;
-      color: #ffffff;
-      background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.13);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 7px 16px rgba(0,0,0,.22);
-      transition: transform .16s ease, border-color .16s ease, background .16s ease;
+      color: #fff;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045)),
+        radial-gradient(circle at 20% 0%, rgba(24,231,255,.13), transparent 55%);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow:
+        0 9px 20px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.12);
       overflow: hidden;
       -webkit-tap-highlight-color: transparent;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+
+    .link-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent, rgba(255,255,255,.08), transparent);
+      transform: translateX(-120%);
+      transition: transform .35s ease;
+      pointer-events: none;
     }
 
     .link-btn:active {
-      transform: scale(.975);
-      border-color: rgba(0, 224, 255, .55);
-      background: linear-gradient(145deg, rgba(0, 224, 255, .18), rgba(255,255,255,.055));
+      transform: scale(.976);
+      border-color: rgba(24,231,255,.58);
+      box-shadow: 0 5px 14px rgba(0,0,0,.30), 0 0 18px rgba(24,231,255,.14);
     }
 
+    .link-btn:active::after { transform: translateX(120%); }
+
     .link-thumb {
-      width: 32px;
-      height: 32px;
-      flex: 0 0 32px;
-      border-radius: 10px;
+      width: 37px;
+      height: 37px;
+      flex: 0 0 37px;
+      border-radius: 13px;
       background-size: cover;
       background-position: center;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.15), 0 5px 12px rgba(0,0,0,.28);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.16),
+        0 6px 13px rgba(0,0,0,.26);
     }
 
     .link-text {
@@ -192,7 +289,7 @@
     }
 
     .link-title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 900;
       line-height: 1.12;
       white-space: nowrap;
@@ -201,68 +298,77 @@
     }
 
     .link-subtitle {
-      margin-top: 4px;
+      margin-top: 5px;
       font-size: 10.5px;
-      font-weight: 700;
-      line-height: 1.05;
-      color: #b8c9dc;
+      line-height: 1.1;
+      font-weight: 800;
+      color: #bfd1e5;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .footer-tip {
-      margin-top: 8px;
+      margin-top: 9px;
+      padding-bottom: 1px;
       text-align: center;
       font-size: 10px;
-      color: rgba(216,248,255,.64);
+      color: rgba(223,250,255,.62);
     }
 
     @media (min-width: 520px) {
       body { padding: 18px; }
-      .container { min-height: auto; padding: 14px; }
+      .container { min-height: auto; padding: 16px; }
       .link-btn:hover {
         transform: translateY(-2px);
-        border-color: rgba(0, 224, 255, .45);
-        background: linear-gradient(145deg, rgba(0, 224, 255, .16), rgba(255,255,255,.06));
+        border-color: rgba(24,231,255,.45);
+        box-shadow: 0 14px 28px rgba(0,0,0,.28), 0 0 22px rgba(24,231,255,.12);
       }
+      .link-btn:hover::after { transform: translateX(120%); }
     }
 
-    @media (max-width: 360px) {
-      body { padding: 6px; }
-      .container { padding: 8px; border-radius: 17px; }
-      .brand { grid-template-columns: 52px 1fr; gap: 8px; margin-bottom: 6px; }
-      .avatar { width: 52px; height: 52px; border-radius: 16px; }
-      .avatar img { width: 43px; height: 43px; }
-      .title { font-size: 17px; }
-      .bio { font-size: 10px; padding: 3px 7px; }
-      .notice { margin-bottom: 6px; padding: 5px 7px; font-size: 10px; }
+    @media (max-width: 380px) {
+      body { padding: 7px; }
+      .container { min-height: calc(100vh - 14px); padding: 9px; border-radius: 20px; }
+      .hero { gap: 9px; padding-bottom: 8px; }
+      .logo-wrap { width: 55px; height: 55px; flex-basis: 55px; border-radius: 18px; }
+      .logo-wrap img { width: 45px; height: 45px; }
+      .eyebrow { font-size: 9px; padding: 2px 6px; margin-bottom: 4px; }
+      .title { font-size: 18px; }
+      .subtitle { font-size: 10px; }
+      .status-bar { gap: 5px; margin-bottom: 7px; }
+      .status-chip { padding: 5px 3px; font-size: 9px; }
       .links { gap: 6px; }
-      .group-header { height: 23px; font-size: 11px; }
-      .link-btn { min-height: 50px; padding: 6px 7px; gap: 7px; border-radius: 13px; }
-      .link-thumb { width: 29px; height: 29px; flex-basis: 29px; }
-      .link-title { font-size: 12px; }
-      .link-subtitle { font-size: 9.5px; }
-      .footer-tip { margin-top: 6px; font-size: 9px; }
+      .group-header { height: 27px; font-size: 11px; border-radius: 12px; }
+      .link-btn { min-height: 56px; gap: 7px; padding: 7px; border-radius: 15px; }
+      .link-thumb { width: 32px; height: 32px; flex-basis: 32px; border-radius: 11px; }
+      .link-title { font-size: 12.5px; }
+      .link-subtitle { margin-top: 4px; font-size: 9.5px; }
+      .footer-tip { margin-top: 7px; font-size: 9px; }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <section class="brand">
-      <div class="avatar">
+    <section class="hero">
+      <div class="logo-wrap">
         <img src="./images/touxiang.png" alt="世界杯专业导航">
       </div>
-      <div>
-        <div class="title">世界杯专业导航</div>
-        <div class="bio">永久网址 aa138.vip</div>
+      <div class="hero-main">
+        <div class="eyebrow">AA138 官方导航</div>
+        <h1 class="title">世界杯专业导航</h1>
+        <div class="subtitle">永久网址 aa138.vip · 安全稳定 · 快速入口</div>
       </div>
     </section>
 
-    <div class="notice">官方导航 · 安全入口 · 线路打不开请更换备用入口</div>
+    <section class="status-bar" aria-label="导航提示">
+      <div class="status-chip">官方入口</div>
+      <div class="status-chip">快速跳转</div>
+      <div class="status-chip">备用网址</div>
+    </section>
 
     <div class="links">
-      <div class="group-header">91系彩娱乐线路-世界杯专属</div>
+      <div class="group-header group-91"><span>91系彩娱乐线路-世界杯专属</span></div>
 
       <a href="https://91600.vip/?a=2789678" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/998.png')"></div>
@@ -296,7 +402,7 @@
         </div>
       </a>
 
-      <div class="group-header">51系彩娱乐线路-世界杯专属</div>
+      <div class="group-header group-51"><span>51系彩娱乐线路-世界杯专属</span></div>
 
       <a href="https://yy.02299.vip?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb3.png')"></div>
@@ -330,7 +436,7 @@
         </div>
       </a>
 
-      <div class="group-header">皇冠信用网线路</div>
+      <div class="group-header group-hg"><span>皇冠信用网线路</span></div>
 
       <a href="https://hga035.com" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb7.png')"></div>
@@ -365,7 +471,7 @@
       </a>
     </div>
 
-    <div class="footer-tip">点击对应线路进入 · 请认准永久网址</div>
+    <div class="footer-tip">线路无法打开时，请切换备用入口</div>
   </main>
 </body>
 </html>
