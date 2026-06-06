@@ -212,76 +212,76 @@
       box-shadow: 0 0 14px var(--cyan);
     }
 
-    .group-header span { flex: 1; }
+    .group-header span {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     .group-header::after {
       content: '在线';
-      min-width: 34px;
-      padding: 3px 8px 4px;
-      border-radius: 999px;
-      font-size: 9px;
+      min-width: 42px;
+      padding: 4px 9px;
+      border-radius: 8px;
+      font-size: 11px;
       font-weight: 950;
       line-height: 1;
       text-align: center;
-      color: #e9fbff;
-      letter-spacing: .9px;
-      text-shadow: 0 0 8px rgba(24,231,255,.36);
-      border: 1px solid rgba(24,231,255,.48);
-      background:
-        radial-gradient(circle at 16% 50%, rgba(24,231,255,.95) 0 2px, transparent 3px),
-        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.04)),
-        rgba(6, 14, 28, .78);
+      color: #07101c;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 0 rgba(255,255,255,.38);
+      border: 2px solid rgba(255,255,255,.90);
+      background: linear-gradient(180deg, #f3feff 0%, #7ff8ff 46%, #21cfe7 100%);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.18),
-        inset 0 -1px 0 rgba(0,0,0,.24),
-        0 0 14px rgba(24,231,255,.18);
+        inset 0 1px 0 rgba(255,255,255,.75),
+        inset 0 -2px 0 rgba(0,0,0,.18),
+        0 0 0 1px rgba(0,0,0,.28),
+        0 0 16px rgba(24,231,255,.38);
+      animation: badge-pulse 1.7s ease-in-out infinite;
+    }
+
+    @keyframes badge-pulse {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      45% { transform: scale(1.06); filter: brightness(1.18); }
+      70% { transform: scale(1.02); filter: brightness(1.05); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .group-header::after { animation: none; }
     }
 
     .group-91 { margin-top: 9px; border-color: rgba(24,231,255,.28); }
     .group-91::after {
       content: '热门';
-      color: #fff0f3;
-      padding-left: 10px;
-      border-color: rgba(255,83,118,.62);
-      background:
-        radial-gradient(circle at 15% 50%, #ff4f72 0 2px, transparent 3px),
-        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.04)),
-        linear-gradient(135deg, rgba(255,79,114,.26), rgba(255,166,46,.14)),
-        rgba(18, 8, 18, .82);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(0,0,0,.26), 0 0 14px rgba(255,79,114,.28);
-      text-shadow: 0 0 9px rgba(255,79,114,.48);
+      color: #fff;
+      border-color: rgba(255,235,235,.95);
+      background: linear-gradient(180deg, #ff9bad 0%, #ff345e 45%, #c81438 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.70), inset 0 -2px 0 rgba(70,0,0,.28), 0 0 0 1px rgba(0,0,0,.32), 0 0 18px rgba(255,52,94,.50);
+      text-shadow: 0 1px 1px rgba(80,0,0,.58);
     }
 
     .group-51 { border-color: rgba(255,209,102,.30); background: linear-gradient(90deg, rgba(255,209,102,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-51::before { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
     .group-51::after {
       content: '老牌';
-      color: #fff2c2;
-      padding-left: 10px;
-      border-color: rgba(255,209,102,.64);
-      background:
-        radial-gradient(circle at 15% 50%, #ffd166 0 2px, transparent 3px),
-        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.04)),
-        linear-gradient(135deg, rgba(255,209,102,.24), rgba(255,159,67,.12)),
-        rgba(18, 14, 6, .82);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(0,0,0,.26), 0 0 14px rgba(255,209,102,.26);
-      text-shadow: 0 0 9px rgba(255,209,102,.45);
+      color: #251400;
+      border-color: rgba(255,247,210,.95);
+      background: linear-gradient(180deg, #fff4a8 0%, #ffd24d 45%, #d99316 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.78), inset 0 -2px 0 rgba(92,51,0,.24), 0 0 0 1px rgba(0,0,0,.28), 0 0 18px rgba(255,209,102,.46);
+      text-shadow: 0 1px 0 rgba(255,255,255,.42);
     }
 
     .group-hg { margin-top: 9px; border-color: rgba(86,243,166,.30); background: linear-gradient(90deg, rgba(86,243,166,.17), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-hg::before { background: var(--green); box-shadow: 0 0 14px var(--green); }
     .group-hg::after {
       content: '安全';
-      color: #dfffee;
-      padding-left: 10px;
-      border-color: rgba(86,243,166,.62);
-      background:
-        radial-gradient(circle at 15% 50%, #56f3a6 0 2px, transparent 3px),
-        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.04)),
-        linear-gradient(135deg, rgba(86,243,166,.22), rgba(24,231,255,.10)),
-        rgba(6, 18, 14, .82);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(0,0,0,.26), 0 0 14px rgba(86,243,166,.26);
-      text-shadow: 0 0 9px rgba(86,243,166,.45);
+      color: #032013;
+      border-color: rgba(220,255,237,.95);
+      background: linear-gradient(180deg, #bfffe0 0%, #48f29e 45%, #18a864 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.76), inset 0 -2px 0 rgba(0,70,38,.24), 0 0 0 1px rgba(0,0,0,.28), 0 0 18px rgba(86,243,166,.46);
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
     }
 
     .link-btn {
