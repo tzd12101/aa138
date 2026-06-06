@@ -215,20 +215,52 @@
     .group-header span { flex: 1; }
 
     .group-header::after {
-      content: 'LIVE';
-      padding: 2px 6px;
+      content: '在线';
+      min-width: 34px;
+      padding: 3px 8px;
       border-radius: 999px;
       font-size: 9px;
-      color: #061526;
-      background: linear-gradient(90deg, #84fbff, #ffe27a);
-      box-shadow: 0 0 12px rgba(24,231,255,.25);
+      font-weight: 950;
+      line-height: 1;
+      text-align: center;
+      color: #08131f;
+      letter-spacing: .8px;
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
+      border: 1px solid rgba(255,255,255,.48);
+      background: linear-gradient(135deg, #84fbff 0%, #ffe27a 100%);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.08) inset,
+        0 0 14px rgba(24,231,255,.30),
+        0 5px 12px rgba(0,0,0,.26);
     }
 
     .group-91 { margin-top: 9px; border-color: rgba(24,231,255,.28); }
+    .group-91::after {
+      content: '热门';
+      color: #fff7ec;
+      border-color: rgba(255,255,255,.42);
+      background: linear-gradient(135deg, #ff5a7a 0%, #ff9f43 52%, #ffe27a 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset, 0 0 16px rgba(255,90,122,.34), 0 5px 12px rgba(0,0,0,.26);
+      text-shadow: 0 1px 1px rgba(90,0,0,.32);
+    }
+
     .group-51 { border-color: rgba(255,209,102,.30); background: linear-gradient(90deg, rgba(255,209,102,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-51::before { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
+    .group-51::after {
+      content: '老牌';
+      color: #3a2300;
+      background: linear-gradient(135deg, #fff0a8 0%, #ffd166 54%, #ff9f43 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 15px rgba(255,209,102,.34), 0 5px 12px rgba(0,0,0,.26);
+    }
+
     .group-hg { margin-top: 9px; border-color: rgba(86,243,166,.30); background: linear-gradient(90deg, rgba(86,243,166,.17), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-hg::before { background: var(--green); box-shadow: 0 0 14px var(--green); }
+    .group-hg::after {
+      content: '安全';
+      color: #062417;
+      background: linear-gradient(135deg, #56f3a6 0%, #84fbff 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 15px rgba(86,243,166,.34), 0 5px 12px rgba(0,0,0,.26);
+    }
 
     .link-btn {
       position: relative;
@@ -400,7 +432,7 @@
       <div class="group-header group-91"><span>MK体育-玩法最多的外围综合盘</span></div>
 
       <a href="https://www.qzwmom.vip:9056/entry/register58196/?i_code=35579517" target="_blank" class="link-btn">
-        <div class="link-thumb" style="background-image:url('./images/mk668.png')"></div>
+        <div class="link-thumb" style="background-image:url('./images/mk669.jpg')"></div>
         <div class="link-text">
           <div class="link-title">MK手机端</div>
           <div class="link-subtitle">阿拉雒斯兢技俱乐部赞助商</div>
@@ -408,7 +440,7 @@
       </a>
 
       <a href="https://www.mk2021.com:6003/register58196/?i_code=35579517" target="_blank" class="link-btn">
-        <div class="link-thumb" style="background-image:url('./images/mk668.png')"></div>
+        <div class="link-thumb" style="background-image:url('./images/mk669.jpg')"></div>
         <div class="link-text">
           <div class="link-title">MK电脑端</div>
           <div class="link-subtitle">科莫足球俱乐部赞助商</div>
@@ -416,7 +448,7 @@
       </a>
 
       <a href="https://www.50zjft.vip:8443/CHT/customer/main" target="_blank" class="link-btn">
-        <div class="link-thumb" style="background-image:url('./images/mk668.png')"></div>
+        <div class="link-thumb" style="background-image:url('./images/mk669.jpg')"></div>
         <div class="link-text">
           <div class="link-title">联系客服</div>
           <div class="link-subtitle">玩法新颖、玩家众多</div>
@@ -424,7 +456,7 @@
       </a>
 
       <a href="https://t.me/MK888bot?start=35579517_B" target="_blank" class="link-btn">
-        <div class="link-thumb" style="background-image:url('./images/mk668.png')"></div>
+        <div class="link-thumb" style="background-image:url('./images/mk669.jpg')"></div>
         <div class="link-text">
           <div class="link-title">Telegram投注</div>
           <div class="link-subtitle">极速存提、大额无忧</div>
