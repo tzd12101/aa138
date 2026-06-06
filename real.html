@@ -216,41 +216,51 @@
 
     .group-header::after {
       content: '在线';
-      min-width: 34px;
-      padding: 3px 8px;
+      min-width: 36px;
+      padding: 3px 8px 4px;
       border-radius: 999px;
       font-size: 9px;
       font-weight: 950;
       line-height: 1;
       text-align: center;
-      color: #08131f;
-      letter-spacing: .8px;
-      text-shadow: 0 1px 0 rgba(255,255,255,.35);
-      border: 1px solid rgba(255,255,255,.48);
-      background: linear-gradient(135deg, #84fbff 0%, #ffe27a 100%);
+      color: #f8fbff;
+      letter-spacing: .9px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.55), 0 -1px 0 rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.58);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.24) 13%, rgba(255,255,255,0) 28%),
+        linear-gradient(135deg, #eef8ff 0%, #7f94aa 18%, #253447 42%, #d8e6f4 64%, #53677d 82%, #f5fbff 100%);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,.08) inset,
-        0 0 14px rgba(24,231,255,.30),
-        0 5px 12px rgba(0,0,0,.26);
+        inset 0 1px 0 rgba(255,255,255,.86),
+        inset 0 -1px 0 rgba(0,0,0,.36),
+        inset 0 0 0 1px rgba(255,255,255,.10),
+        0 0 14px rgba(24,231,255,.22),
+        0 6px 12px rgba(0,0,0,.34);
     }
 
     .group-91 { margin-top: 9px; border-color: rgba(24,231,255,.28); }
     .group-91::after {
       content: '热门';
-      color: #fff7ec;
-      border-color: rgba(255,255,255,.42);
-      background: linear-gradient(135deg, #ff5a7a 0%, #ff9f43 52%, #ffe27a 100%);
-      box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset, 0 0 16px rgba(255,90,122,.34), 0 5px 12px rgba(0,0,0,.26);
-      text-shadow: 0 1px 1px rgba(90,0,0,.32);
+      color: #fff8ef;
+      border-color: rgba(255,236,202,.68);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.85) 0%, rgba(255,242,204,.28) 14%, rgba(255,255,255,0) 31%),
+        linear-gradient(135deg, #fff3b0 0%, #d94742 20%, #6f1017 43%, #ff9e35 66%, #fff1a8 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.78), inset 0 -1px 0 rgba(80,0,0,.46), inset 0 0 0 1px rgba(255,255,255,.10), 0 0 17px rgba(255,86,70,.40), 0 6px 12px rgba(0,0,0,.34);
+      text-shadow: 0 1px 1px rgba(64,0,0,.62), 0 -1px 0 rgba(255,255,255,.12);
     }
 
     .group-51 { border-color: rgba(255,209,102,.30); background: linear-gradient(90deg, rgba(255,209,102,.18), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
     .group-51::before { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
     .group-51::after {
       content: '老牌';
-      color: #3a2300;
-      background: linear-gradient(135deg, #fff0a8 0%, #ffd166 54%, #ff9f43 100%);
-      box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 15px rgba(255,209,102,.34), 0 5px 12px rgba(0,0,0,.26);
+      color: #3a2500;
+      border-color: rgba(255,238,176,.75);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.86) 0%, rgba(255,244,196,.38) 14%, rgba(255,255,255,0) 31%),
+        linear-gradient(135deg, #fff7bb 0%, #c69225 21%, #6d4710 43%, #ffd166 66%, #fff0a4 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.82), inset 0 -1px 0 rgba(82,45,0,.42), inset 0 0 0 1px rgba(255,255,255,.12), 0 0 16px rgba(255,209,102,.38), 0 6px 12px rgba(0,0,0,.34);
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
     }
 
     .group-hg { margin-top: 9px; border-color: rgba(86,243,166,.30); background: linear-gradient(90deg, rgba(86,243,166,.17), rgba(24,231,255,.10), rgba(255,255,255,.04)); }
@@ -258,8 +268,12 @@
     .group-hg::after {
       content: '安全';
       color: #062417;
-      background: linear-gradient(135deg, #56f3a6 0%, #84fbff 100%);
-      box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 0 15px rgba(86,243,166,.34), 0 5px 12px rgba(0,0,0,.26);
+      border-color: rgba(201,255,230,.72);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.84) 0%, rgba(216,255,238,.34) 14%, rgba(255,255,255,0) 31%),
+        linear-gradient(135deg, #d9ffed 0%, #42c987 20%, #0b5d3b 43%, #56f3a6 66%, #cffff0 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.82), inset 0 -1px 0 rgba(0,72,42,.42), inset 0 0 0 1px rgba(255,255,255,.12), 0 0 16px rgba(86,243,166,.38), 0 6px 12px rgba(0,0,0,.34);
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
     }
 
     .link-btn {
