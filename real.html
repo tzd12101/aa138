@@ -580,6 +580,235 @@
       cursor: pointer;
     }
 
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 8px;
+      padding-bottom: 1px;
+    }
+
+    .site-footer .footer-tip {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      flex: 1;
+    }
+
+    .admin-entry {
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 999px;
+      padding: 3px 8px;
+      color: rgba(223,250,255,.60);
+      background: rgba(255,255,255,.045);
+      font-size: 9.5px;
+      font-weight: 800;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .admin-entry:active { transform: scale(.96); color: #eaffff; }
+
+    .admin-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 22;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: rgba(0, 5, 14, .74);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .admin-modal.show { display: flex; }
+
+    .admin-dialog {
+      width: min(398px, 100%);
+      max-height: min(76vh, 620px);
+      display: flex;
+      flex-direction: column;
+      border-radius: 18px;
+      padding: 12px;
+      color: #f7fbff;
+      background:
+        linear-gradient(180deg, rgba(14,34,60,.97), rgba(5,12,27,.98)),
+        radial-gradient(circle at top, rgba(24,231,255,.17), transparent 56%);
+      border: 1px solid rgba(24,231,255,.24);
+      box-shadow: 0 24px 70px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .admin-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+
+    .admin-title {
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: .2px;
+    }
+
+    .admin-close,
+    .admin-small-btn {
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: #e8fbff;
+      background: rgba(255,255,255,.07);
+      font-size: 10px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .admin-close { width: 28px; height: 26px; }
+    .admin-small-btn { height: 27px; padding: 0 9px; }
+
+    .admin-login-row {
+      display: grid;
+      grid-template-columns: 1fr 66px;
+      gap: 7px;
+    }
+
+    .admin-input {
+      width: 100%;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 11px;
+      padding: 0 10px;
+      color: #f7fbff;
+      background: rgba(1,8,18,.48);
+      outline: none;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .admin-primary {
+      height: 34px;
+      border: 0;
+      border-radius: 11px;
+      color: #06101d;
+      background: linear-gradient(180deg, #bffcff, #31e3ff 48%, #189bff);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.70), 0 0 15px rgba(24,231,255,.23);
+      font-size: 12px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
+    .admin-msg {
+      min-height: 18px;
+      margin-top: 8px;
+      color: #ffd166;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .admin-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .admin-count {
+      color: rgba(223,250,255,.70);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .admin-list {
+      overflow: auto;
+      padding-right: 2px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .admin-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 8px;
+      margin-bottom: 6px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .admin-main { min-width: 0; }
+    .admin-line1 { display: flex; gap: 5px; align-items: center; min-width: 0; }
+    .admin-platform {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 2px 6px;
+      color: #06101d;
+      background: linear-gradient(180deg, #fff2a2, #ffd159 52%, #dc9419);
+      font-size: 10px;
+      font-weight: 950;
+    }
+
+    .admin-account {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .admin-time {
+      margin-top: 4px;
+      color: rgba(223,250,255,.62);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .paid-toggle {
+      width: 58px;
+      height: 28px;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .paid-toggle::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #bfd1e5;
+      transition: left .18s ease, background .18s ease;
+    }
+
+    .paid-toggle::after {
+      content: '未';
+      position: absolute;
+      right: 8px;
+      top: 6px;
+      color: rgba(255,255,255,.76);
+      font-size: 10px;
+      font-weight: 950;
+    }
+
+    .paid-toggle.paid {
+      background: rgba(86,243,166,.24);
+      border-color: rgba(86,243,166,.35);
+    }
+
+    .paid-toggle.paid::before { left: 33px; background: #56f3a6; }
+    .paid-toggle.paid::after { content: '已'; left: 9px; right: auto; color: #cffff0; }
+
     .footer-tip {
       margin-top: 8px;
       padding-bottom: 1px;
@@ -758,8 +987,38 @@
       </a>
     </div>
 
-    <div class="footer-tip">线路无法打开时，请切换备用入口</div>
+    <div class="site-footer">
+      <div class="footer-tip">线路无法打开时，请切换备用入口</div>
+      <button class="admin-entry" type="button" onclick="openAdminModal()">管理</button>
+    </div>
   </main>
+
+
+  <div class="admin-modal" id="adminModal" onclick="closeAdminModal(event)">
+    <div class="admin-dialog" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+      <div class="admin-top">
+        <div class="admin-title" id="adminTitle">包赔申请管理</div>
+        <button class="admin-close" type="button" onclick="hideAdminModal()">×</button>
+      </div>
+      <div id="adminLoginBox">
+        <div class="admin-login-row">
+          <input class="admin-input" id="adminPassword" type="password" autocomplete="current-password" placeholder="管理密码">
+          <button class="admin-primary" type="button" onclick="adminLogin()">登录</button>
+        </div>
+        <div class="admin-msg" id="adminLoginMsg"></div>
+      </div>
+      <div id="adminPanel" style="display:none">
+        <div class="admin-tools">
+          <span class="admin-count" id="adminCount">申请记录</span>
+          <span>
+            <button class="admin-small-btn" type="button" onclick="loadApplications()">刷新</button>
+            <button class="admin-small-btn" type="button" onclick="adminLogout()">退出</button>
+          </span>
+        </div>
+        <div class="admin-list" id="adminList"></div>
+      </div>
+    </div>
+  </div>
 
   <div class="comp-modal" id="compModal" onclick="closeCompModal(event)">
     <div class="comp-dialog" role="dialog" aria-modal="true" aria-labelledby="compModalTitle">
@@ -775,7 +1034,7 @@
       var text=document.getElementById('compModalText');
       if(type==='apply'){
         title.textContent='申请已记录';
-        text.textContent='当前页面先展示申请入口，申请记录读取功能后续接入。请保留平台与账号信息，等待客服核实。';
+        text.textContent='申请已提交，赔付将在24小时内发放到对应的游戏账户，完成1倍流水后即可提款。';
       }else{
         title.textContent='首单包赔活动规则';
         text.innerHTML='本活动仅限新注册用户参与，参与平台仅限51彩娱乐和MK体育。<br>用户在合作平台完成第一单世界杯体育投注后，如该注单亏损，aa138导航按实际亏损金额赔付，最高赔付500元；如该注单盈利，则视为正常盈利，不再额外赔付。<br>本活动仅限世界杯体育类注单，其他游戏、真人、电子、棋牌等注单不参与。<br>用户提交申请后，赔付将在24小时内发放到对应的游戏账户，完成1倍流水后即可提款。';
@@ -819,19 +1078,89 @@
     }
     function hideCompModal(){document.getElementById('compModal').classList.remove('show');unlockCompScroll()}
     function closeCompModal(e){if(e.target&&e.target.id==='compModal')hideCompModal()}
-    function submitCompApply(){
+    function showCompMessage(titleText,msg){
+      var title=document.getElementById('compModalTitle');
+      var text=document.getElementById('compModalText');
+      title.textContent=titleText;
+      text.textContent=msg;
+      document.getElementById('compModal').classList.add('show');
+      lockCompScroll();
+    }
+    async function submitCompApply(){
       hideCompMenu();
       var account=(document.getElementById('compAccount').value||'').trim();
-      if(!account){
-        var title=document.getElementById('compModalTitle');
-        var text=document.getElementById('compModalText');
-        title.textContent='请填写账号';
-        text.textContent='请选择平台并填写账号后再提交首单包赔申请。';
-        document.getElementById('compModal').classList.add('show');
-        lockCompScroll();
-        return;
+      if(!account){showCompMessage('请填写账号','请选择平台并填写账号后再提交首单包赔申请。');return;}
+      var btn=document.querySelector('.apply-btn');
+      var old=btn.textContent;
+      btn.textContent='提交中';
+      btn.disabled=true;
+      try{
+        var res=await fetch('/api/comp/apply',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({platform:compPlatform,account:account})});
+        var data=await res.json().catch(function(){return {}});
+        if(res.ok&&data.ok){showCompMessage('申请已提交',data.message||'申请已提交，赔付将在24小时内发放到对应的游戏账户。');return;}
+        showCompMessage('申请失败',data.message||'申请失败，请稍后重试。');
+      }catch(e){
+        showCompMessage('申请失败','网络异常，请稍后重试。');
+      }finally{
+        btn.textContent=old;
+        btn.disabled=false;
       }
-      openCompModal('apply');
+    }
+
+    function openAdminModal(){document.getElementById('adminModal').classList.add('show');lockCompScroll()}
+    function hideAdminModal(){document.getElementById('adminModal').classList.remove('show');unlockCompScroll()}
+    function closeAdminModal(e){if(e.target&&e.target.id==='adminModal')hideAdminModal()}
+    function adminSetMsg(msg){document.getElementById('adminLoginMsg').textContent=msg||''}
+    function fmtTime(v){if(!v)return '';var d=new Date(String(v).replace(' ','T')+'Z'); if(isNaN(d.getTime()))return v; return d.toLocaleString('zh-CN',{hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});}
+    function escHtml(s){return String(s||'').replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]})}
+    async function adminLogin(){
+      var pwd=(document.getElementById('adminPassword').value||'').trim();
+      if(!pwd){adminSetMsg('请输入管理密码');return;}
+      adminSetMsg('登录中...');
+      try{
+        var res=await fetch('/api/admin/login',{method:'POST',headers:{'content-type':'application/json'},credentials:'include',body:JSON.stringify({password:pwd})});
+        var data=await res.json().catch(function(){return {}});
+        if(!res.ok||!data.ok){adminSetMsg(data.message||'登录失败');return;}
+        document.getElementById('adminLoginBox').style.display='none';
+        document.getElementById('adminPanel').style.display='block';
+        document.getElementById('adminPassword').value='';
+        await loadApplications();
+      }catch(e){adminSetMsg('网络异常，请稍后重试')}
+    }
+    async function loadApplications(){
+      var list=document.getElementById('adminList');
+      list.innerHTML='<div class="admin-msg">加载中...</div>';
+      try{
+        var res=await fetch('/api/admin/applications',{credentials:'include'});
+        var data=await res.json().catch(function(){return {}});
+        if(!res.ok||!data.ok){
+          document.getElementById('adminPanel').style.display='none';
+          document.getElementById('adminLoginBox').style.display='block';
+          adminSetMsg(data.message||'请重新登录');
+          return;
+        }
+        var items=data.items||[];
+        document.getElementById('adminCount').textContent='申请记录 '+items.length+' 条';
+        if(!items.length){list.innerHTML='<div class="admin-msg">暂无申请记录</div>';return;}
+        list.innerHTML=items.map(function(it){
+          var paid=it.status==='paid';
+          return '<div class="admin-item" data-id="'+it.id+'"><div class="admin-main"><div class="admin-line1"><span class="admin-platform">'+escHtml(it.platform)+'</span><span class="admin-account">'+escHtml(it.account)+'</span></div><div class="admin-time">申请 '+fmtTime(it.created_at)+(it.paid_at?' · 赔付 '+fmtTime(it.paid_at):'')+'</div></div><button class="paid-toggle '+(paid?'paid':'')+'" type="button" onclick="togglePaid('+it.id+','+(!paid)+')" aria-label="切换赔付状态"></button></div>';
+        }).join('');
+      }catch(e){list.innerHTML='<div class="admin-msg">加载失败，请稍后重试</div>'}
+    }
+    async function togglePaid(id,paid){
+      try{
+        var res=await fetch('/api/admin/applications/'+id+'/paid',{method:'POST',headers:{'content-type':'application/json'},credentials:'include',body:JSON.stringify({paid:paid})});
+        var data=await res.json().catch(function(){return {}});
+        if(!res.ok||!data.ok){alert(data.message||'操作失败');return;}
+        await loadApplications();
+      }catch(e){alert('网络异常，请稍后重试')}
+    }
+    async function adminLogout(){
+      await fetch('/api/admin/logout',{method:'POST',credentials:'include'}).catch(function(){});
+      document.getElementById('adminPanel').style.display='none';
+      document.getElementById('adminLoginBox').style.display='block';
+      adminSetMsg('');
     }
   </script>
 

@@ -1,0 +1,14 @@
+name = "aa138-comp-api"
+main = "worker/src/index.js"
+compatibility_date = "2026-06-14"
+account_id = "952d51fd19fee9bc8bbff75a23cf954d"
+
+routes = [
+  { pattern = "aa138.vip/api/*", zone_name = "aa138.vip" },
+  { pattern = "www.aa138.vip/api/*", zone_name = "aa138.vip" }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aa138_comp"
+database_id = "5af01f58-2475-4635-9cb0-c628f174dcdf"
