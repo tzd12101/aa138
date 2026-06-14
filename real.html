@@ -378,8 +378,8 @@
       height: 24px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+      justify-content: flex-start;
+      gap: 7px;
       padding: 0 2px 5px;
       color: #fff8dc;
       font-size: 12px;
@@ -412,7 +412,7 @@
     .rule-btn {
       border: 1px solid rgba(255,255,255,.24);
       border-radius: 999px;
-      padding: 3px 9px;
+      padding: 3px 8px;
       color: #e9fbff;
       background: rgba(255,255,255,.08);
       font-size: 10px;
@@ -429,7 +429,7 @@
       align-items: center;
     }
 
-    .comp-select,
+    .comp-picker,
     .comp-input {
       width: 100%;
       height: 32px;
@@ -445,8 +445,62 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
     }
 
-    .comp-select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, #d8f8ff 50%), linear-gradient(135deg, #d8f8ff 50%, transparent 50%); background-position: calc(100% - 12px) 13px, calc(100% - 8px) 13px; background-size: 4px 4px, 4px 4px; background-repeat: no-repeat; }
-    .comp-select option { color: #06101d; background: #f7fbff; }
+    .comp-picker-wrap { position: relative; min-width: 0; }
+
+    .comp-picker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .comp-picker::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid rgba(216,248,255,.84);
+      border-bottom: 2px solid rgba(216,248,255,.84);
+      transform: rotate(45deg) translateY(-2px);
+      flex: 0 0 6px;
+    }
+
+    .comp-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 36px;
+      z-index: 12;
+      display: none;
+      padding: 4px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(13,31,54,.98), rgba(5,12,27,.98));
+      border: 1px solid rgba(24,231,255,.24);
+      box-shadow: 0 14px 32px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.10);
+    }
+
+    .comp-menu.show { display: block; }
+
+    .comp-option {
+      height: 29px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      border-radius: 9px;
+      color: #eafcff;
+      font-size: 11px;
+      font-weight: 900;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .comp-option.active {
+      color: #06101d;
+      background: linear-gradient(180deg, #bffcff, #31e3ff 52%, #189bff);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.62);
+    }
+
     .comp-input::placeholder { color: rgba(216,248,255,.45); }
 
     .apply-btn {
@@ -581,10 +635,13 @@
         <button class="rule-btn" type="button" onclick="openCompModal('rules')">规则</button>
       </div>
       <div class="comp-form">
-        <select class="comp-select" id="compPlatform" aria-label="选择平台">
-          <option value="51彩娱乐">51彩娱乐</option>
-          <option value="MK体育">MK体育</option>
-        </select>
+        <div class="comp-picker-wrap">
+          <button class="comp-picker" id="compPlatformBtn" type="button" onclick="toggleCompMenu(event)" aria-label="选择平台" aria-expanded="false"><span id="compPlatformText">51彩娱乐</span></button>
+          <div class="comp-menu" id="compPlatformMenu">
+            <div class="comp-option active" onclick="chooseCompPlatform('51彩娱乐')">51彩娱乐</div>
+            <div class="comp-option" onclick="chooseCompPlatform('MK体育')">MK体育</div>
+          </div>
+        </div>
         <input class="comp-input" id="compAccount" type="text" inputmode="text" autocomplete="off" placeholder="填写账号">
         <button class="apply-btn" type="button" onclick="submitCompApply()">申请</button>
       </div>
@@ -718,9 +775,33 @@
       }
       document.getElementById('compModal').classList.add('show');
     }
+    var compPlatform='51彩娱乐';
+    function toggleCompMenu(e){
+      if(e)e.stopPropagation();
+      var menu=document.getElementById('compPlatformMenu');
+      var btn=document.getElementById('compPlatformBtn');
+      var show=!menu.classList.contains('show');
+      menu.classList.toggle('show',show);
+      btn.setAttribute('aria-expanded',show?'true':'false');
+    }
+    function hideCompMenu(){
+      var menu=document.getElementById('compPlatformMenu');
+      var btn=document.getElementById('compPlatformBtn');
+      if(menu)menu.classList.remove('show');
+      if(btn)btn.setAttribute('aria-expanded','false');
+    }
+    function chooseCompPlatform(v){
+      compPlatform=v;
+      document.getElementById('compPlatformText').textContent=v;
+      var options=document.querySelectorAll('.comp-option');
+      for(var i=0;i<options.length;i++)options[i].classList.toggle('active',options[i].textContent===v);
+      hideCompMenu();
+    }
+    document.addEventListener('click',function(e){if(!e.target.closest('.comp-picker-wrap'))hideCompMenu()});
     function hideCompModal(){document.getElementById('compModal').classList.remove('show')}
     function closeCompModal(e){if(e.target&&e.target.id==='compModal')hideCompModal()}
     function submitCompApply(){
+      hideCompMenu();
       var account=(document.getElementById('compAccount').value||'').trim();
       if(!account){
         var title=document.getElementById('compModalTitle');
