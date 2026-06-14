@@ -362,6 +362,163 @@
       text-overflow: ellipsis;
     }
 
+
+    .comp-card {
+      margin: -1px 0 8px;
+      padding: 7px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255,209,102,.16), rgba(24,231,255,.10), rgba(255,255,255,.045)),
+        rgba(255,255,255,.055);
+      border: 1px solid rgba(255,209,102,.24);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 8px 20px rgba(0,0,0,.20);
+    }
+
+    .comp-head {
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 0 2px 5px;
+      color: #fff8dc;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .2px;
+    }
+
+    .comp-head strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      text-shadow: 0 0 14px rgba(255,209,102,.26);
+    }
+
+    .comp-head strong::before {
+      content: '赔';
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      font-size: 11px;
+      color: #2a1600;
+      background: linear-gradient(180deg, #fff5b6, #ffd45c 48%, #d99417);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 0 12px rgba(255,209,102,.34);
+    }
+
+    .rule-btn {
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      padding: 3px 9px;
+      color: #e9fbff;
+      background: rgba(255,255,255,.08);
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .comp-form {
+      display: grid;
+      grid-template-columns: 86px 1fr 56px;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .comp-select,
+    .comp-input {
+      width: 100%;
+      height: 32px;
+      min-width: 0;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: 0 8px;
+      color: #f7fbff;
+      background: rgba(1, 8, 18, .46);
+      outline: none;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+    }
+
+    .comp-select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, #d8f8ff 50%), linear-gradient(135deg, #d8f8ff 50%, transparent 50%); background-position: calc(100% - 12px) 13px, calc(100% - 8px) 13px; background-size: 4px 4px, 4px 4px; background-repeat: no-repeat; }
+    .comp-select option { color: #06101d; background: #f7fbff; }
+    .comp-input::placeholder { color: rgba(216,248,255,.45); }
+
+    .apply-btn {
+      height: 32px;
+      border: 0;
+      border-radius: 10px;
+      color: #07101c;
+      background: linear-gradient(180deg, #bffcff, #31e3ff 46%, #189bff);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.70), 0 0 15px rgba(24,231,255,.23);
+      font-size: 11px;
+      font-weight: 950;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .apply-btn:active,
+    .rule-btn:active { transform: scale(.97); }
+
+    .comp-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 5, 14, .70);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .comp-modal.show { display: flex; }
+
+    .comp-dialog {
+      width: min(360px, 100%);
+      border-radius: 18px;
+      padding: 15px;
+      color: #f7fbff;
+      background:
+        linear-gradient(180deg, rgba(16,38,64,.96), rgba(5,12,28,.98)),
+        radial-gradient(circle at top, rgba(255,209,102,.18), transparent 56%);
+      border: 1px solid rgba(255,209,102,.25);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .comp-dialog h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .comp-dialog p {
+      margin: 0;
+      color: #d7e9f7;
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 800;
+    }
+
+    .modal-close {
+      width: 100%;
+      height: 34px;
+      margin-top: 13px;
+      border: 0;
+      border-radius: 11px;
+      color: #06101d;
+      background: linear-gradient(180deg, #fff2a2, #ffd159 52%, #dc9419);
+      font-size: 13px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
     .footer-tip {
       margin-top: 8px;
       padding-bottom: 1px;
@@ -415,6 +572,23 @@
     </section>
 
     <div class="notice"><span class="notice-track">51彩娱乐是运营11年无黑历史的信誉平台，主打体育彩票，极速存提。MK体育是玩法丰富的外围平台，是近几年的后起之秀，同样无黑历史。AA138导航网只提供安全可靠的博彩网，杜绝和远离任何黑款平台。请认准官方永久网址 aa138.vip，谨防假冒网站。</span></div>
+
+
+
+    <section class="comp-card" aria-label="首单包赔活动">
+      <div class="comp-head">
+        <strong>首单包赔活动</strong>
+        <button class="rule-btn" type="button" onclick="openCompModal('rules')">规则</button>
+      </div>
+      <div class="comp-form">
+        <select class="comp-select" id="compPlatform" aria-label="选择平台">
+          <option value="51彩娱乐">51彩娱乐</option>
+          <option value="MK体育">MK体育</option>
+        </select>
+        <input class="comp-input" id="compAccount" type="text" inputmode="text" autocomplete="off" placeholder="填写账号">
+        <button class="apply-btn" type="button" onclick="submitCompApply()">申请</button>
+      </div>
+    </section>
 
     <div class="links">
       <div class="group-header group-51"><span>51系彩娱乐线路-世界杯专属</span></div>
@@ -522,5 +696,43 @@
 
     <div class="footer-tip">线路无法打开时，请切换备用入口</div>
   </main>
+
+  <div class="comp-modal" id="compModal" onclick="closeCompModal(event)">
+    <div class="comp-dialog" role="dialog" aria-modal="true" aria-labelledby="compModalTitle">
+      <h3 id="compModalTitle">首单包赔活动规则</h3>
+      <p id="compModalText">用户第一单如果是亏损，aa138导航会全额赔付，封顶100。</p>
+      <button class="modal-close" type="button" onclick="hideCompModal()">我知道了</button>
+    </div>
+  </div>
+
+  <script>
+    function openCompModal(type){
+      var title=document.getElementById('compModalTitle');
+      var text=document.getElementById('compModalText');
+      if(type==='apply'){
+        title.textContent='申请已记录';
+        text.textContent='当前页面先展示申请入口，申请记录读取功能后续接入。请保留平台与账号信息，等待客服核实。';
+      }else{
+        title.textContent='首单包赔活动规则';
+        text.textContent='用户第一单如果是亏损，aa138导航会全额赔付，封顶100。';
+      }
+      document.getElementById('compModal').classList.add('show');
+    }
+    function hideCompModal(){document.getElementById('compModal').classList.remove('show')}
+    function closeCompModal(e){if(e.target&&e.target.id==='compModal')hideCompModal()}
+    function submitCompApply(){
+      var account=(document.getElementById('compAccount').value||'').trim();
+      if(!account){
+        var title=document.getElementById('compModalTitle');
+        var text=document.getElementById('compModalText');
+        title.textContent='请填写账号';
+        text.textContent='请选择平台并填写账号后再提交首单包赔申请。';
+        document.getElementById('compModal').classList.add('show');
+        return;
+      }
+      openCompModal('apply');
+    }
+  </script>
+
 </body>
 </html>
