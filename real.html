@@ -519,6 +519,13 @@
     .apply-btn:active,
     .rule-btn:active { transform: scale(.97); }
 
+
+    body.modal-lock {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+
     .comp-modal {
       position: fixed;
       inset: 0;
@@ -757,7 +764,7 @@
   <div class="comp-modal" id="compModal" onclick="closeCompModal(event)">
     <div class="comp-dialog" role="dialog" aria-modal="true" aria-labelledby="compModalTitle">
       <h3 id="compModalTitle">首单包赔活动规则</h3>
-      <p id="compModalText">仅限新注册用户参与。<br>用户在合作平台完成第一单世界杯体育投注后，如该注单亏损，aa138导航按实际亏损金额赔付，最高赔付500元；如该注单盈利，则视为正常盈利，不再额外赔付。<br>本活动仅限世界杯体育类注单，其他游戏、真人、电子、棋牌等注单不参与。<br>用户提交申请并核实通过后，赔付将在24小时内到账。</p>
+      <p id="compModalText">本活动仅限新注册用户参与，参与平台仅限51彩娱乐和MK体育。<br>用户在合作平台完成第一单世界杯体育投注后，如该注单亏损，aa138导航按实际亏损金额赔付，最高赔付500元；如该注单盈利，则视为正常盈利，不再额外赔付。<br>本活动仅限世界杯体育类注单，其他游戏、真人、电子、棋牌等注单不参与。<br>用户提交申请后，赔付将在24小时内发放到对应的游戏账户，完成1倍流水后即可提款。</p>
       <button class="modal-close" type="button" onclick="hideCompModal()">我知道了</button>
     </div>
   </div>
@@ -771,9 +778,10 @@
         text.textContent='当前页面先展示申请入口，申请记录读取功能后续接入。请保留平台与账号信息，等待客服核实。';
       }else{
         title.textContent='首单包赔活动规则';
-        text.innerHTML='仅限新注册用户参与。<br>用户在合作平台完成第一单世界杯体育投注后，如该注单亏损，aa138导航按实际亏损金额赔付，最高赔付500元；如该注单盈利，则视为正常盈利，不再额外赔付。<br>本活动仅限世界杯体育类注单，其他游戏、真人、电子、棋牌等注单不参与。<br>用户提交申请并核实通过后，赔付将在24小时内到账。';
+        text.innerHTML='本活动仅限新注册用户参与，参与平台仅限51彩娱乐和MK体育。<br>用户在合作平台完成第一单世界杯体育投注后，如该注单亏损，aa138导航按实际亏损金额赔付，最高赔付500元；如该注单盈利，则视为正常盈利，不再额外赔付。<br>本活动仅限世界杯体育类注单，其他游戏、真人、电子、棋牌等注单不参与。<br>用户提交申请后，赔付将在24小时内发放到对应的游戏账户，完成1倍流水后即可提款。';
       }
       document.getElementById('compModal').classList.add('show');
+      lockCompScroll();
     }
     var compPlatform='51彩娱乐';
     function toggleCompMenu(e){
@@ -798,7 +806,18 @@
       hideCompMenu();
     }
     document.addEventListener('click',function(e){if(!e.target.closest('.comp-picker-wrap'))hideCompMenu()});
-    function hideCompModal(){document.getElementById('compModal').classList.remove('show')}
+    var compScrollY=0;
+    function lockCompScroll(){
+      compScrollY=window.scrollY||document.documentElement.scrollTop||0;
+      document.body.style.top='-'+compScrollY+'px';
+      document.body.classList.add('modal-lock');
+    }
+    function unlockCompScroll(){
+      document.body.classList.remove('modal-lock');
+      document.body.style.top='';
+      window.scrollTo(0,compScrollY||0);
+    }
+    function hideCompModal(){document.getElementById('compModal').classList.remove('show');unlockCompScroll()}
     function closeCompModal(e){if(e.target&&e.target.id==='compModal')hideCompModal()}
     function submitCompApply(){
       hideCompMenu();
@@ -809,6 +828,7 @@
         title.textContent='请填写账号';
         text.textContent='请选择平台并填写账号后再提交首单包赔申请。';
         document.getElementById('compModal').classList.add('show');
+        lockCompScroll();
         return;
       }
       openCompModal('apply');
